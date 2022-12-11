@@ -22,5 +22,6 @@
     "@rescriptbr/radix-ui",
     "rescript-next"
   ],
+  "ppx-flags": ["@greenlabs/ppx-ts/ppx"],
   "bsc-flags": [""]
 }
