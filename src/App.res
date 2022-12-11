@@ -9,6 +9,7 @@ type props = {
 
 Emotion.injectGlobal({
   "html": {
+    "backgroundColor": Theme.colors(#background),
     "fontSize": "62.5%",
   },
   "*": {

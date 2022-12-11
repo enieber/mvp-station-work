@@ -1,3 +1,6 @@
 let default = () => {
-  <div> {`Hey :)`->React.string} </div>
+  <Layout>
+    <Header />
+    <div />
+  </Layout>
 }
