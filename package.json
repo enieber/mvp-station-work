@@ -16,6 +16,7 @@
     "@greenlabs/ppx-ts": "0.1.7",
     "@greenlabs/rescript-jest": "1.0.1",
     "@opendevtools/rescript-intl": "4.0.0",
+    "@radix-ui/react-dialog": "1.0.2",
     "@radix-ui/react-navigation-menu": "1.1.1",
     "@rescript/react": "0.10.3",
     "@rescriptbr/ancestor": "1.0.0-5",
