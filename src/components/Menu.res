@@ -1,49 +1,61 @@
 open Radix
+
 module Styles = {
-  let listContainer = Emotion.css({
-    "padding": 0,
-    "margin": 0,
-    "display": "flex",
-    "gap": 32,
-  })
+  let listContainer = Emotion.css(
+    {
+      "padding": 0,
+      "margin": 0,
+      "display": "flex",
+      "alignItems": "center",
+      "flexDirection": "column",
+      "gap": 32,
+    }->Media.md({
+      "gap": 24,
+      "flexDirection": "row",
+    }),
+  )
 
   let item = Emotion.css({
     "listStyle": "none",
   })
 
-  let link = Emotion.css({
-    "color": Theme.colors(#gray100),
-    "fontFamily": Theme.Fonts.corben,
-    "fontSize": "1.8rem",
-    "outline": "none",
-    "textDecoration": "none",
-    "borderRadius": 2,
-    "padding": "0 4px",
-    "transition": "box-shadow 250ms",
-    "position": "relative",
-    "&:after": {
-      "content": "''",
-      "position": "absolute",
-      "left": "50%",
-      "transform": "translateX(-50%)",
-      "bottom": 0,
-      "width": 16,
-      "height": 2,
-      "backgroundColor": "transparent",
-    },
-    "&[data-active]": {
+  let link = Emotion.css(
+    {
+      "color": Theme.colors(#gray100),
+      "fontFamily": Theme.Fonts.corben,
+      "fontSize": "2.4rem",
+      "outline": "none",
+      "textDecoration": "none",
+      "borderRadius": 2,
+      "padding": "0 4px",
+      "transition": "box-shadow 250ms",
+      "position": "relative",
       "&:after": {
-        "backgroundColor": Theme.colors(#black),
+        "content": "''",
+        "position": "absolute",
+        "left": "50%",
+        "transform": "translateX(-50%)",
+        "bottom": 0,
+        "width": 16,
+        "height": 2,
+        "backgroundColor": "transparent",
       },
-      "color": Theme.colors(#black),
-    },
-    "&:hover": {
-      "color": Theme.colors(#black),
-    },
-    "&:focus-visible": {
-      "boxShadow": `0px 0px 0px 1px ${Theme.colors(#gray100)}`,
-    },
-  })
+      "&[data-active]": {
+        "&:after": {
+          "backgroundColor": Theme.colors(#black),
+        },
+        "color": Theme.colors(#black),
+      },
+      "&:hover": {
+        "color": Theme.colors(#black),
+      },
+      "&:focus-visible": {
+        "boxShadow": `0px 0px 0px 1px ${Theme.colors(#gray100)}`,
+      },
+    }->Media.sm({
+      "fontSize": "1.8rem",
+    }),
+  )
 }
 
 module Item = {

@@ -21,5 +21,5 @@ Emotion.injectGlobal({
 let default = (props): React.element => {
   let {component, pageProps} = props
 
-  {React.createElement(component, pageProps)}
+  <Layout> {React.createElement(component, pageProps)} </Layout>
 }
