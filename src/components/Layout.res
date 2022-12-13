@@ -6,6 +6,7 @@ let make = (~children) => {
     <Box width={xs: 100.->#pct} maxW={xs: 792->#px}>
       <Header />
       <Box tag=#main> children </Box>
+      <Footer />
     </Box>
   </Box>
 }

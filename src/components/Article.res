@@ -1,13 +1,18 @@
 open AncestorSite
 
 module Styles = {
-  let card = Emotion.css({
-    "transition": "background-color 200ms",
-    "cursor": "default",
-    "&:hover": {
+  let card = Emotion.css(
+    {
+      "transition": "background-color 200ms",
       "backgroundColor": "#eee",
-    },
-  })
+      "cursor": "default",
+    }->Media.md({
+      "backgroundColor": "transparent",
+      "&:hover": {
+        "backgroundColor": "#eee",
+      },
+    }),
+  )
 }
 
 module Stats = {
@@ -25,7 +30,7 @@ let make = (~title, ~text, ~readingTime, ~publishedAt) => {
     className=Styles.card
     borderRadius={xs: 0.75}
     py={xs: 3.0}
-    px={xs: 2.0}
+    px={xs: 3.0}
     gap={xs: #one(1.0)}
     tag=#article>
     <Typography fontSize={xs: 2.0->#rem} color={xs: #black}> {title->React.string} </Typography>

@@ -3,6 +3,7 @@ module Colors = {
     | #background
     | #gray100
     | #gray200
+    | #gray400
     | #black
   ]
 
@@ -11,6 +12,7 @@ module Colors = {
     | #background => #hex("#FAFAFA")
     | #gray100 => #hex("#5A5A5A")
     | #gray200 => #hex("#717171")
+    | #gray400 => #hex("#E2E2E2")
     | #black => #hex("#151515")
     }
 
