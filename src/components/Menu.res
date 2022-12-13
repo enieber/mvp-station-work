@@ -9,7 +9,7 @@ module Styles = {
       "alignItems": "center",
       "flexDirection": "column",
       "gap": 32,
-    }->Media.md({
+    }->Media.sm({
       "gap": 24,
       "flexDirection": "row",
     }),

@@ -11,10 +11,10 @@ type breakpoints<'a> = [#xs('a) | #sm('a) | #md('a) | #lg('a) | #xl('a)]
 let valueOfDevice = (value: breakpoints<'a>) =>
   switch value {
   | #xs(_) => 0
-  | #sm(_) => 600
-  | #md(_) => 840
+  | #sm(_) => 475
+  | #md(_) => 920
   | #lg(_) => 1280
-  | #xl(_) => 1440
+  | #xl(_) => 1920
   }
 
 let breakpoint = (current, styles, ~media, ~device) => {

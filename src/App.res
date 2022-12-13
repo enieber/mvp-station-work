@@ -13,6 +13,7 @@ Emotion.injectGlobal({
     "fontSize": "62.5%",
   },
   "*": {
+    "fontFamily": Theme.Fonts.corben,
     "boxSizing": "border-box",
     "scrollBehavior": "smooth",
   },

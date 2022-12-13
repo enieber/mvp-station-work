@@ -18,14 +18,14 @@ include Ancestor.Make({
     (Xl, breakpoints.xl),
   ]
   type spacing = float
-  type radius = int
+  type radius = float
   type zIndex = int
   type colors = Theme.Colors.t
 
   let zIndex = v => v
   let colors = Theme.Colors.make
   let spacing = spacing => #pxFloat(spacing *. 8.0)
-  let radius = radius => #px(radius * 8)
+  let radius = radius => #pxFloat(radius *. 8.0)
 
   let sizeByBreakpoints = breakpoint =>
     switch breakpoint {

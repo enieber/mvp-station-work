@@ -2,6 +2,7 @@ module Colors = {
   type t = [
     | #background
     | #gray100
+    | #gray200
     | #black
   ]
 
@@ -9,6 +10,7 @@ module Colors = {
     switch token {
     | #background => #hex("#FAFAFA")
     | #gray100 => #hex("#5A5A5A")
+    | #gray200 => #hex("#717171")
     | #black => #hex("#151515")
     }
 
