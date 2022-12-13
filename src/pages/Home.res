@@ -1,3 +1,5 @@
+module Hero = Home_Hero
+
 let default = () => {
-  <div />
+  <Hero />
 }
