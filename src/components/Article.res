@@ -1,5 +1,7 @@
 open AncestorSite
 
+type lang = English | Portuguese
+
 module Styles = {
   let card = Emotion.css(
     {
@@ -25,7 +27,7 @@ module Stats = {
 }
 
 @react.component
-let make = (~title, ~text, ~readingTime, ~publishedAt) => {
+let make = (~title, ~text, ~lang: lang, ~readingTime, ~publishedAt) => {
   <Stack
     className=Styles.card
     borderRadius={xs: 0.75}
@@ -45,6 +47,12 @@ let make = (~title, ~text, ~readingTime, ~publishedAt) => {
       />}>
       <Stats> {readingTime} </Stats>
       <Stats> {publishedAt} </Stats>
+      <Stats>
+        {switch lang {
+        | English => "🇺🇸"
+        | Portuguese => "🇧🇷"
+        }}
+      </Stats>
     </Stack>
   </Stack>
 }

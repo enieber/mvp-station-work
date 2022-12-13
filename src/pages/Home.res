@@ -17,6 +17,7 @@ let default = () => {
             text="You'll finally understand what is monad and how to use it."
             readingTime={`3min read`}
             publishedAt={`Dec 03, 2022`}
+            lang=English
           />
         </Box>
         <Box columns={xs: #12, md: #6}>
@@ -25,6 +26,7 @@ let default = () => {
             text="You'll finally understand what is monad and how to use it."
             readingTime={`3min read`}
             publishedAt={`Dec 03, 2022`}
+            lang=English
           />
         </Box>
       </Grid>

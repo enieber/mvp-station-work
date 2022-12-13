@@ -26,6 +26,6 @@ module Styles = {
 }
 
 @react.component
-let make = (~children, ~href, ~target=?) => {
-  <a ?target href className={Styles.link}> {children->React.string} </a>
+let make = (~children, ~href) => {
+  <a href target="_blank" className={Styles.link}> {children->React.string} </a>
 }

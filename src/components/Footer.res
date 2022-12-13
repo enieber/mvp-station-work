@@ -15,7 +15,7 @@ let make = () => {
     justifyContent={xs: #center, sm: #"space-between"}>
     <Typography tag=#span fontSize={xs: 2.0->#rem} color={xs: #gray100}>
       {`Made with `->React.string}
-      <Link color=#black href="https://rescript-lang.org"> "ReScript" </Link>
+      <Link color=#black target="_blank" href="https://rescript-lang.org"> "ReScript" </Link>
     </Typography>
     <Box display={xs: #flex} gap={xs: #one(1.5)}>
       <SocialLink href="https://twitter.com/vmaarcosp"> "twitter" </SocialLink>
