@@ -8,20 +8,22 @@
 
   "package-specs": [
     {
-      "module": "commonjs",
+      "module": "es6",
       "in-source": true
     }
   ],
   "reason": {
     "react-jsx": 3
   },
-  "suffix": ".bs.js",
+  "suffix": ".mjs",
   "bs-dependencies": [
+    "rescript-js",
+    "rescript-nodejs",
     "@rescript/react",
     "@rescriptbr/ancestor",
     "@rescriptbr/radix-ui",
     "rescript-next"
   ],
   "ppx-flags": ["@greenlabs/ppx-ts/ppx"],
-  "bsc-flags": [""]
+  "bsc-flags": ["-open ReScriptJs.Js"]
 }
