@@ -12,7 +12,7 @@ let default = () => {
       </Box>
       <Grid spacing={xs: 4.0}>
         <Box columns={xs: #12, md: #6}>
-          <Article
+          <ArticleCard
             title="Improving the UI using ADTs"
             text="You'll finally understand what is monad and how to use it."
             readingTime={`3min read`}
@@ -21,7 +21,7 @@ let default = () => {
           />
         </Box>
         <Box columns={xs: #12, md: #6}>
-          <Article
+          <ArticleCard
             title="Improving the UI using ADTs"
             text="You'll finally understand what is monad and how to use it."
             readingTime={`3min read`}

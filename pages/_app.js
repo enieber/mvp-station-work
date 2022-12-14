@@ -1,5 +1,5 @@
-import ReScriptApp from "../src/App.bs"
+import ReScriptApp from "../src/App.mjs";
 
 export default function App(props) {
-  return <ReScriptApp {...props} />
+  return <ReScriptApp {...props} />;
 }
