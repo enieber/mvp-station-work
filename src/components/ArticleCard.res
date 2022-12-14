@@ -39,7 +39,7 @@ let make = (~title, ~text, ~lang: lang, ~readingTime, ~publishedAt) => {
     <Typography fontSize={xs: 1.8->#rem} color={xs: #gray100}> {text->React.string} </Typography>
     <Stack
       mt={xs: 2.5}
-      gap={xs: #one(2.0)}
+      gap={xs: #one(1.5)}
       alignItems={xs: #center}
       direction={xs: #horizontal}
       divider={<Base

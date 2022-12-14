@@ -1,4 +1,4 @@
-%%raw(`require("normalize.css")`)
+%%raw(`import("normalize.css")`)
 type pageProps
 
 type props = {

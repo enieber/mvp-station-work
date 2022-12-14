@@ -35,6 +35,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /lib/
-*.bs.js
+*.mjs
 .merlin
 .bsb.lock
