@@ -3,10 +3,11 @@ module Styles = {
     "border": 0,
     "outline": 0,
     "background": 0,
-    "letterSpacing": "0.01em",
+    "letterSpacing": "-0.02em",
     "color": Theme.colors(#gray100),
-    "fontFamily": Theme.Fonts.corben,
-    "fontSize": "2.0rem",
+    "fontFamily": Theme.Fonts.recoleta,
+    "fontWeight": 500,
+    "fontSize": "2.2rem",
   })
 }
 @react.component

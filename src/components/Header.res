@@ -59,11 +59,6 @@ let make = () => {
           <MenuOverlay.Overlay />
           <MenuOverlay.Content>
             <Stack height={xs: 100.->#pct}>
-              <Box display={xs: #flex} p={xs: 3.0}>
-                <MenuOverlay.Close asChild=true>
-                  <CloseMenuButton />
-                </MenuOverlay.Close>
-              </Box>
               <Box
                 display={xs: #flex}
                 alignItems={xs: #center}
@@ -78,6 +73,11 @@ let make = () => {
                   })
                   ->React.array}
                 </Menu>
+              </Box>
+              <Box display={xs: #flex} p={xs: 3.0}>
+                <MenuOverlay.Close asChild=true>
+                  <CloseMenuButton />
+                </MenuOverlay.Close>
               </Box>
             </Stack>
           </MenuOverlay.Content>

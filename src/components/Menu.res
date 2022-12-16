@@ -22,8 +22,9 @@ module Styles = {
   let link = Emotion.css(
     {
       "color": Theme.colors(#gray100),
-      "fontFamily": Theme.Fonts.corben,
-      "fontSize": "2.4rem",
+      "fontFamily": Theme.Fonts.recoleta,
+      "fontSize": "2.8rem",
+      "fontWeight": 500,
       "outline": "none",
       "textDecoration": "none",
       "borderRadius": 2,
@@ -53,6 +54,7 @@ module Styles = {
         "boxShadow": `0px 0px 0px 1px ${Theme.colors(#gray100)}`,
       },
     }->Media.sm({
+      "fontWeight": 400,
       "fontSize": "1.8rem",
     }),
   )

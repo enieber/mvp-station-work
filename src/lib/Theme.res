@@ -20,8 +20,7 @@ module Colors = {
 }
 
 module Fonts = {
-  let corben = "'Corben', sans-serif"
-  let chonburi = "'Chonburi', sans-serif"
+  let recoleta = "'Recoleta', sans-serif"
 }
 
 let colors = Colors.toString

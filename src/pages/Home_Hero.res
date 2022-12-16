@@ -8,8 +8,8 @@ module Name = {
       m={xs: 0.0}
       fontSize={xs: 3.6->#rem, md: 5.2->#rem}
       color={xs: #black}
-      fontFamily={xs: [Theme.Fonts.chonburi]->#custom}>
-      {`Marcos Oliveira`->React.string}
+      fontFamily={xs: [Theme.Fonts.recoleta]->#custom}>
+      {`Hi, I'm Marcos Oliveira.`->React.string}
     </Typography>
   }
 }
@@ -31,7 +31,9 @@ module Text = {
 module TextHighlight = {
   @react.component
   let make = (~children) => {
-    <Typography color={xs: #black} tag=#span> {React.string(children)} </Typography>
+    <Typography color={xs: #black} fontWeight={xs: #500} tag=#span>
+      {React.string(children)}
+    </Typography>
   }
 }
 
