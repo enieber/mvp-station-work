@@ -32,6 +32,7 @@ let make = () => {
   })
 
   <Box
+    className={Animations.fadeIn()}
     tag=#header
     pt={xs: 4.0, md: 6.0}
     display={xs: #flex}
