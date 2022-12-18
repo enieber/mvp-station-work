@@ -1,5 +1,5 @@
-import Page from "../../src/pages/Article.mjs";
+import Page from "pages/Article.mjs";
 
-export default function Writing() {
-  return <Page />;
+export default function Article(props) {
+  return <Page {...props} />;
 }

@@ -1,8 +1,11 @@
 open AncestorSite
 
+module GetStaticProps = Next.Page.GetStaticProps
 module Hero = Home_Hero
 
-let default = () => {
+type props = {posts: array<BlogClient.post>}
+
+let default = ({posts}) => {
   <Stack gap={xs: #one(8.0)} pb={xs: 8.0}>
     <Hero />
     <Stack
@@ -10,26 +13,26 @@ let default = () => {
       <Box mt={xs: 3.0}>
         <Badge> "Writing" </Badge>
       </Box>
-      <Grid spacing={xs: 4.0}>
-        <Box columns={xs: #12, md: #6}>
-          <ArticleCard
-            title="Improving the UI using ADTs"
-            text="You'll finally understand what is monad and how to use it."
-            readingTime={`3min read`}
-            publishedAt={`Dec 03, 2022`}
-            lang=English
-          />
-        </Box>
-        <Box columns={xs: #12, md: #6}>
-          <ArticleCard
-            title="Improving the UI using ADTs"
-            text="You'll finally understand what is monad and how to use it."
-            readingTime={`3min read`}
-            publishedAt={`Dec 03, 2022`}
-            lang=English
-          />
-        </Box>
+      <Grid spacing={xs: 3.0, md: 4.0}>
+        {posts
+        ->Belt.Array.mapWithIndex((key, post) => {
+          <Box columns={xs: #12, md: #6} key={key->Belt.Int.toString}>
+            <ArticleCard
+              title=post.title
+              text=post.excerpt
+              publishedAt={post.publishedAt->Date.fromString}
+              readingTime={post.readingTimeInMinutes}
+              lang=post.lang
+            />
+          </Box>
+        })
+        ->React.array}
       </Grid>
     </Stack>
   </Stack>
 }
+
+let getStaticProps: GetStaticProps.t<props, unit, unit> = async _ =>
+  {
+    "props": {posts: BlogClient.getLatestPosts()},
+  }
