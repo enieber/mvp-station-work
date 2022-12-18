@@ -22,6 +22,7 @@
     "@rescript/react",
     "@rescriptbr/ancestor",
     "@rescriptbr/radix-ui",
+    "@greenlabs/rescript-date-fns",
     "rescript-next"
   ],
   "ppx-flags": ["@greenlabs/ppx-ts/ppx"],
