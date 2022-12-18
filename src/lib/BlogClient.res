@@ -4,6 +4,7 @@ type postData = {
   date: Date.t,
   title: string,
   excerpt: string,
+  lang: option<string>,
 }
 
 type post = {
@@ -12,11 +13,11 @@ type post = {
   title: string,
   excerpt: string,
   slug: string,
+  lang: ArticleCard.lang,
   readingTimeInMinutes: int,
 }
 
 let postsDirectory = Path.join([Process.cwd(), "posts"])
-let ignoredFiles = ["index.js"]
 
 let calculateReadingTime = content => {
   let wordsPerMinute = 260.
@@ -30,18 +31,15 @@ let calculateReadingTime = content => {
   ->Belt.Float.toInt
 }
 
-let removeIgnoredFiles = files =>
-  files->Belt.Array.keep(fileName => !(ignoredFiles->Array.includes(fileName)))
-
 let removeFileExtension = files =>
   files->Belt.Array.map(fileName => fileName->String.split(".")->Belt.Array.getExn(0))
 
-let getSlugs = () => Fs.readdirSync(postsDirectory)->removeIgnoredFiles->removeFileExtension
+let getSlugs = () => Fs.readdirSync(postsDirectory)->removeFileExtension
 
 let getPostBySlug = slug => {
   let postPath = Path.join([postsDirectory, `${slug}.mdx`])
   let post = Fs.readFileSync(postPath, #utf8)
-  let post = GrayMatter.matter(post)
+  let post: GrayMatter.result<postData> = GrayMatter.matter(post)
 
   {
     slug,
@@ -50,7 +48,16 @@ let getPostBySlug = slug => {
     title: post.data.title,
     excerpt: post.data.excerpt,
     readingTimeInMinutes: calculateReadingTime(post.content),
+    lang: switch post.data.lang {
+    | Some("portuguese") => #portuguese
+    | None
+    | Some("english")
+    | Some(_) =>
+      #english
+    },
   }
 }
 
 let getPosts = () => getSlugs()->Belt.Array.map(getPostBySlug)
+
+let getLatestPosts = () => getPosts()->Array.slice(~from=0, ~end=2)

@@ -1,6 +1,6 @@
 open AncestorSite
 
-type lang = English | Portuguese
+type lang = [#english | #portuguese]
 
 module Styles = {
   let card = Emotion.css(
@@ -49,12 +49,12 @@ let make = (~title, ~text, ~lang: lang, ~readingTime, ~publishedAt) => {
       divider={<Base
         borderRadius={xs: 1.0} bgColor={xs: #gray200} width={xs: 4->#px} height={xs: 4->#px}
       />}>
-      <Stats> {readingTime} </Stats>
-      <Stats> {publishedAt} </Stats>
+      <Stats> {`${readingTime->Belt.Int.toString} min read`} </Stats>
+      <Stats> {publishedAt->DateFns.format("PP")} </Stats>
       <Stats>
         {switch lang {
-        | English => "🇺🇸"
-        | Portuguese => "🇧🇷"
+        | #english => "🇺🇸"
+        | #portuguese => "🇧🇷"
         }}
       </Stats>
     </Stack>

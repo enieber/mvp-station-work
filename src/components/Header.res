@@ -38,7 +38,9 @@ let make = () => {
     alignItems={xs: #center}
     justifyContent={xs: #"space-between"}
     width={xs: 100.->#pct}>
-    <Logo />
+    <Next.Link href="/">
+      <Logo />
+    </Next.Link>
     <Hidden on={xs: true, sm: false}>
       <Menu>
         {links
