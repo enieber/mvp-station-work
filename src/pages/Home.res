@@ -45,7 +45,7 @@ let default = () => {
     <Stack gap={xs: #one(6.0), md: #one(11.0)}>
       {sections
       ->Belt.Array.mapWithIndex((key, section) => {
-        <Box columns={xs: #12, md: #12} key={key->Belt.Int.toString}>
+        <Box columns={xs: #12, md: #12} key={`section-${key->Belt.Int.toString}`}>
           <h3>
             <TextHighlight> {section.title} </TextHighlight>
           </h3>
@@ -56,11 +56,9 @@ let default = () => {
                 {items
                 ->Belt.List.toArray
                 ->Belt.Array.mapWithIndex((key, item) => {
-                  <div>
-                    <li key={key->Belt.Int.toString}>
-                      <Hero.Text> {item->React.string} </Hero.Text>
-                    </li>
-                  </div>
+                  <li key={`${section.title}-${key->Belt.Int.toString}`}>
+                    <Hero.Text> {item->React.string} </Hero.Text>
+                  </li>
                 })
                 ->React.array}
               </ul>

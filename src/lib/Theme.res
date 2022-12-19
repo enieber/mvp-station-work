@@ -5,6 +5,7 @@ module Colors = {
     | #gray200
     | #gray400
     | #black
+    | #light
   ]
 
   let make = (token: t) =>
@@ -14,6 +15,7 @@ module Colors = {
     | #gray200 => #hex("#717171")
     | #gray400 => #hex("#E2E2E2")
     | #black => #hex("#151515")
+    | #light => #hex("#FFFFFF")
     }
 
   let toString = (token: t) => token->make->Ancestor_Css.Color.toString

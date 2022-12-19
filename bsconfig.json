@@ -5,7 +5,6 @@
     "dir": "src",
     "subdirs": true
   },
-
   "package-specs": [
     {
       "module": "es6",
@@ -15,6 +14,7 @@
   "reason": {
     "react-jsx": 3
   },
+  "refmt": 3,
   "suffix": ".mjs",
   "bs-dependencies": [
     "rescript-js",
@@ -25,6 +25,8 @@
     "@greenlabs/rescript-date-fns",
     "rescript-next"
   ],
-  "ppx-flags": ["@greenlabs/ppx-ts/ppx"],
-  "bsc-flags": ["-open ReScriptJs.Js"]
+  "ppx-flags": [
+    "@greenlabs/ppx-ts/ppx"
+  ],
+  "bsc-flags": ["-open ReScriptJs.Js", "-bs-super-errors"]
 }
