@@ -3,36 +3,78 @@ open AncestorSite
 module GetStaticProps = Next.Page.GetStaticProps
 module Hero = Home_Hero
 
-type props = {posts: array<BlogClient.post>}
+type section = {
+  title: string,
+  items: option<list<string>>,
+  description: option<string>,
+}
 
-let default = ({posts}) => {
+type sections = array<section>
+
+module TextHighlight = {
+  @react.component
+  let make = (~children) => {
+    <Typography
+      color={xs: #black} fontWeight={xs: #500} tag=#h4 fontSize={xs: 3.2->#rem, md: 4.2->#rem}>
+      {React.string(children)}
+    </Typography>
+  }
+}
+
+let default = () => {
+  let sections: sections = [
+    {
+      title: "Problema",
+      items: Some(list{"Multiplos usuarios para um funcionario", "Sistemas dificeis de integrar"}),
+      description: None,
+    },
+    {
+      title: "Ideia",
+      description: Some(`Existe muitas ferramentas que nos auxiliam no dia de trabalho, ferramentas como: rocketchat, nextcloud e outras ferramentas. Para cada ferramenta alguém precisa gerenciar, criar usuarios distintos e se caso a empresa queira criar ou usar alguma ferramenta open source, muita das vezes é dificultada pela necessidade de usar algum sistema de autenticação complexo e nada extensível. Por conta desse problema, o Station Work nasceu com o objetivo de centralizar todos os acessos e ferramentas que a sua empresa usa, criando uma verdadeira Estação de trabalho.`),
+      items: None,
+    },
+    {
+      title: "Solução",
+      items: Some(list{"Centralização de login", "Api para integração", "Open Source code"}),
+      description: None,
+    },
+  ]
+
   <Stack gap={xs: #one(8.0)} pb={xs: 8.0}>
     <Hero />
-    <Stack
-      gap={xs: #one(4.0), md: #one(4.0)} pt={sm: 16.0, md: 18.0} alignItems={xs: #"flex-start"}>
-      <Box mt={xs: 3.0}>
-        <Badge> "Writing" </Badge>
-      </Box>
-      <Grid spacing={xs: 3.0, md: 4.0}>
-        {posts
-        ->Belt.Array.mapWithIndex((key, post) => {
-          <Box columns={xs: #12, md: #6} key={key->Belt.Int.toString}>
-            <ArticleCard
-              title=post.title
-              text=post.excerpt
-              publishedAt={post.publishedAt->Date.fromString}
-              readingTime={post.readingTimeInMinutes}
-              lang=post.lang
-            />
-          </Box>
-        })
-        ->React.array}
-      </Grid>
+    <Stack gap={xs: #one(6.0), md: #one(11.0)}>
+      {sections
+      ->Belt.Array.mapWithIndex((key, section) => {
+        <Box columns={xs: #12, md: #12} key={key->Belt.Int.toString}>
+          <h3>
+            <TextHighlight> {section.title} </TextHighlight>
+          </h3>
+          <div>
+            {switch section.items {
+            | Some(items) =>
+              <ul>
+                {items
+                ->Belt.List.toArray
+                ->Belt.Array.mapWithIndex((key, item) => {
+                  <div>
+                    <li key={key->Belt.Int.toString}>
+                      <Hero.Text> {item->React.string} </Hero.Text>
+                    </li>
+                  </div>
+                })
+                ->React.array}
+              </ul>
+            | None => <> </>
+            }}
+            {switch section.description {
+            | Some(description) => <Hero.Text> {description->React.string} </Hero.Text>
+
+            | None => <> </>
+            }}
+          </div>
+        </Box>
+      })
+      ->React.array}
     </Stack>
   </Stack>
 }
-
-let getStaticProps: GetStaticProps.t<props, unit, unit> = async _ =>
-  {
-    "props": {posts: BlogClient.getLatestPosts()},
-  }

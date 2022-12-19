@@ -12,7 +12,7 @@ module Name = {
       fontSize={xs: 3.6->#rem, md: 5.2->#rem}
       color={xs: #black}
       fontFamily={xs: [Theme.Fonts.recoleta]->#custom}>
-      {`Hi, I'm Marcos Oliveira.`->React.string}
+      {`Station Work`->React.string}
     </Typography>
   }
 }
@@ -41,36 +41,13 @@ module TextHighlight = {
   }
 }
 
-module SocialLinks = {
-  @react.component
-  let make = () => {
-    <Box className={customFadeIn()} display={xs: #flex} justifyContent={xs: #"space-between"}>
-      <SocialLink href="mailto:marcosoliveira@duck.com"> "marcosoliveira@duck.com" </SocialLink>
-      <Box display={xs: #none, md: #flex} gap={xs: #one(2.0)}>
-        <SocialLink href="https://twitter.com/vmaarcosp"> "twitter" </SocialLink>
-        <SocialLink href="https://github.com/vmarcosp"> "github" </SocialLink>
-      </Box>
-    </Box>
-  }
-}
-
 module Texts = {
   @react.component
   let make = () => {
     <Stack gap={xs: #one(3.0)}>
       <Text>
-        {`UI Developer based in `->React.string}
-        <TextHighlight> {`Brazil`} </TextHighlight>
-        {` crafting products using `->React.string}
-        <TextHighlight> "design, functional programming" </TextHighlight>
-        {" and "->React.string}
-        <Link href="https://rescript-lang.org" target="_blank" color=#black> {"rescript"} </Link>
-      </Text>
-      <Text>
-        {"I'm interested in "->React.string}
-        <TextHighlight> "functional programming, ui, dx, design systems" </TextHighlight>
-        {" and "->React.string}
-        <TextHighlight> "open source." </TextHighlight>
+        {`Monte sua estação de trabalho como um profissional usando `->React.string}
+        <TextHighlight> {`Station Work`} </TextHighlight>
       </Text>
     </Stack>
   }
@@ -82,7 +59,6 @@ let make = () => {
     <Name />
     <Stack gap={xs: #one(6.0), md: #one(11.0)}>
       <Texts />
-      <SocialLinks />
     </Stack>
   </Stack>
 }

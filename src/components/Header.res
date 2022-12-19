@@ -4,20 +4,12 @@ type link = {label: string, href: string}
 
 let links = [
   {
-    label: "About",
+    label: "Sobre",
     href: "/",
   },
   {
-    label: "Writing",
-    href: "/writing",
-  },
-  {
-    label: "Talks",
-    href: "/talks",
-  },
-  {
-    label: "Projects",
-    href: "/projects",
+    label: "Começar",
+    href: "/wait-list",
   },
 ]
 
