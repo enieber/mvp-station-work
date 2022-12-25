@@ -13,6 +13,7 @@
     "@emotion/cache": "11.10.1",
     "@emotion/css": "11.10.0",
     "@emotion/server": "11.10.0",
+    "@glennsl/rescript-fetch": "^0.1.4",
     "@greenlabs/ppx-ts": "0.1.7",
     "@greenlabs/rescript-date-fns": "1.0.0",
     "@greenlabs/rescript-jest": "1.0.1",
@@ -22,9 +23,11 @@
     "@rescript/react": "0.10.3",
     "@rescriptbr/ancestor": "1.0.0-5",
     "@rescriptbr/radix-ui": "1.2.0",
-    "@ryyppy/rescript-promise": "2.1.0",
+    "@ryyppy/rescript-promise": "^2.1.0",
+    "@supabase/supabase-js": "^2.2.1",
     "@svgr/webpack": "6.3.1",
     "cheerio": "1.0.0-rc.12",
+    "cors": "^2.8.5",
     "date-fns": "2.29.3",
     "gray-matter": "4.0.3",
     "html-entities": "2.3.3",
@@ -36,6 +39,7 @@
     "prismjs": "1.29.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-toastify": "^9.1.1",
     "remark": "14.0.2",
     "remark-html": "15.0.1",
     "rescript": "10.1.0-rc.5",
@@ -50,6 +54,7 @@
     "rescript": "10.1.0-rc.5"
   },
   "devDependencies": {
+    "@reasonbr/bs-toastify": "https://github.com/rescriptbr/rescript-toastify.git",
     "lenses-ppx": "^6.1.10"
   }
 }

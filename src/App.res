@@ -1,4 +1,6 @@
 %%raw(`import("normalize.css")`)
+%%raw(`import("react-toastify/dist/ReactToastify.css")`)
+
 type pageProps
 
 type props = {
