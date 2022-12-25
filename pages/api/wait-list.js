@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import Cors from 'cors'
+import axios from 'axios';
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -49,6 +50,18 @@ export default async function handler(req, res) {
         error,
       });
     }
+
+    const url = process.env.DISCORD_URL;
+
+    await axios({
+      url,
+      method: 'POST',
+      data: {
+        username:'Astronalt',
+        type: 1,
+        content: 'Novo usuario adicionado'
+        }
+    });
 
     return res.status(200).json({
       message: "email saved",

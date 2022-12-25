@@ -26,6 +26,7 @@
     "@ryyppy/rescript-promise": "^2.1.0",
     "@supabase/supabase-js": "^2.2.1",
     "@svgr/webpack": "6.3.1",
+    "axios": "^1.2.1",
     "cheerio": "1.0.0-rc.12",
     "cors": "^2.8.5",
     "date-fns": "2.29.3",
